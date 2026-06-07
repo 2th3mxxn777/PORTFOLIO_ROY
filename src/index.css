@@ -1,0 +1,80 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    overflow-x: hidden;
+  }
+  
+  /* Lenis essential styles */
+  html.lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  body {
+    /* Font change kora holo */
+    font-family: 'Inter', sans-serif;
+    @apply bg-[#020617] text-[#e2e8f0] overflow-x-hidden; /* Text color ektu off-white kora holo eye comfort er jonno */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom Scrollbar - Ektuo dark kora holo jate focus disturb na hoy */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #020617;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #22c55e;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative transition-colors duration-300;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-green-500 transition-all duration-300;
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+  
+  .skill-card {
+    @apply transition-all duration-300 bg-white/5 border border-white/10;
+  }
+  
+  .skill-card:hover {
+    @apply -translate-y-1 shadow-lg shadow-green-500/10 border-green-500/30;
+  }
+}
+body {
+  @apply bg-white text-zinc-900 transition-colors duration-500;
+}
+.dark body {
+  @apply bg-[#050505] text-white;
+}
