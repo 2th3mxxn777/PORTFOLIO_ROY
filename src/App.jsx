@@ -14,6 +14,8 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import LoadingScreen from './components/LoadingScreen'
 import Achievements from './components/Achievements'
+import SchoolWork from './components/SchoolWork'
+import CareerDevelopment from './components/CareerDevelopment'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -116,8 +118,12 @@ function App() {
               <Education />
             </section>
 
-            <section id="recognitions">
-              <Achievements />
+            <section id="school-work">
+              <SchoolWork />
+            </section>
+
+            <section id="career">
+              <CareerDevelopment />
             </section>
 
             <section id="contact">
